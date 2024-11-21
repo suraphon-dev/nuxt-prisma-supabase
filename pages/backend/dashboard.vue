@@ -1,5 +1,7 @@
 <template>
-   <h1 class="text-3xl font-bold underline text-red-500">Hello world!</h1>
+   <div>
+      <h1>backend dashboard</h1>
+   </div>
 </template>
 
 <script setup lang="ts"></script>
