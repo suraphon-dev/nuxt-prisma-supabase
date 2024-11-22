@@ -7,15 +7,17 @@ const router = useRouter()
 
 // ฟังก์ชัน Logout
 const handleLogout = async () => {
-   // เรียกใช้ Supabase API เพื่อ logout
-   await supabase.auth.signOut()
+   if (confirm('ยืนยันที่จะออกจากระบบ!') == true) {
+      // เรียกใช้ Supabase API เพื่อ logout
+      await supabase.auth.signOut()
 
-   // ลบ Cookie
-   const authToken = useCookie('auth_token')
-   authToken.value = null // เคลียร์ค่า Cookie
+      // ลบ Cookie
+      const authToken = useCookie('auth_token')
+      authToken.value = null // เคลียร์ค่า Cookie
 
-   // Redirect ไปที่หน้า login
-   router.push('/login')
+      // Redirect ไปที่หน้า login
+      router.push('/login')
+   }
 }
 </script>
 
@@ -25,8 +27,6 @@ const handleLogout = async () => {
          <NuxtLink to="/backend/dashboard" class="block text-lg font-semibold hover:bg-gray-700 p-2 rounded">Dashboard</NuxtLink>
          <NuxtLink to="/backend/posts" class="block text-lg font-semibold hover:bg-gray-700 p-2 rounded">Posts</NuxtLink>
          <NuxtLink to="/backend/users" class="block text-lg font-semibold hover:bg-gray-700 p-2 rounded">Users</NuxtLink>
-
-         <!-- ปุ่ม Logout -->
          <button @click="handleLogout" class="block w-full text-left text-lg font-semibold hover:bg-gray-700 p-2 rounded">Logout</button>
       </nav>
    </aside>

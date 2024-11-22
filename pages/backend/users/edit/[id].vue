@@ -6,11 +6,11 @@ useHead({
    meta: [
       {
          name: 'keywords',
-         content: 'Users, Nuxt 3, Backend'
+         content: 'Users Edit, Nuxt 3, Backend'
       },
       {
          name: 'Description',
-         content: 'Users Nuxt 3,  IT Genius Engineering'
+         content: 'Users Edit Nuxt 3,  IT Genius Engineering'
       }
    ]
 })
@@ -18,7 +18,7 @@ useHead({
 
 <template>
    <div>
-      <h2 class="text-2xl font-bold mb-6">Users</h2>
+      <h1>user edit index page</h1>
    </div>
 </template>
 
